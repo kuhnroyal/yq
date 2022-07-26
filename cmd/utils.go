@@ -66,6 +66,8 @@ func configureDecoder() (yqlib.Decoder, error) {
 		return yqlib.NewXMLDecoder(xmlAttributePrefix, xmlContentName, xmlStrictMode, xmlKeepNamespace, xmlUseRawToken), nil
 	case yqlib.PropertiesInputFormat:
 		return yqlib.NewPropertiesDecoder(), nil
+	case yqlib.JsonInputFormat:
+		return yqlib.NewJSONDecoder(), nil
 	}
 
 	return yqlib.NewYamlDecoder(), nil
